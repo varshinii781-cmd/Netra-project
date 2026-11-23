@@ -1,0 +1,103 @@
+<html>
+    <head>
+<!--Define character encoding and mobile responsiveness-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!--Browser tab title-->
+<title>NETRA Robot Monitoring System</title>
+<link rel="stylesheet"href="style.css">
+
+    </head>
+    <body>
+<!--=============HEADER SECTION============-->
+<!-- contains project logo ,navigation,style status and mission button-->
+ <header class="topbar">
+    <div class="brand">
+        <div class="brand-logo">N
+            
+        </div>
+        <div><h1>
+            NETRA
+        </h1>
+    <p>
+        ROBOT MACHINE CONTROL
+    </p></div>
+    </div>
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#telemerty">Telemetry</a>
+        <a href="#alerts">Alerts</a>
+    
+    </nav>
+    <div class="header-right">
+        <span class="online-dot"></span>
+            <span>SYSTEM ONLINE</span>
+            <strong id="clock">--:</strong>
+    </div>
+    <button id="dispatch-open" type="button">+ Dispatch Mission</button>
+ </header>
+    <main class="page">
+        <section class="kpi-grid">
+             <article class="kpi-card">
+                <span>ROVER ONLINE</span>
+                <h2 id="online-count">6/6</h2>
+                <p>Avtive rover units</p>
+           </article>
+
+             <article class="kpi-card">
+                <span>AVERAGE BATTERY</span>
+                <h2 id="average-battery">80%</h2>
+                <p>Fleet battery level</p>
+            </article>
+
+             <article class="kpi-card">
+                <span>OPEN ALERTS</span>
+                <h2 id="alert-count">0</h2>
+                <p>Requires attention</p>
+            </article>
+
+             <article class="kpi-card">
+                <span>DISTANCE TODAY</span>
+                <h2 id="distance">15km</h2>
+                <p>Total simulated distance</p>
+             </article>
+
+        </section>
+        <section id="dashboard" class="section-heading">
+            <div>
+                <h2>Fleet Overview</h2>
+                <p>Monitor all campus rover activities</p>
+            </div>
+            <span class="live-tag">🔴 LIVE MONITORING</span>
+        </section>
+        <section class="panel" id="fleet">
+            <div class="panel-title">
+                <div>
+                <h2>Fleet management</h2>
+                <p>campus rover information</p>
+                </div>
+                <input type="search" id="rover-search" placeholder="Search Rover or Zone.."/>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rover ID</th>
+                            <th>ZONE</th>
+                            <th>Status</th>
+                            <th>Battery</th>
+                            <th>Temperature</th>
+                            <th>Sonar Distance</th>
+                            <th>Speed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fleet-body"></tbody>
+                </table>
+            </div>
+            <p class="table-note">Select a Rover row to view its sensor ratings Telemetry history</p>                 </p>
+        </section>      
+    </main>
+ <script src="script.js"></script>
+    </body>
+</html>
